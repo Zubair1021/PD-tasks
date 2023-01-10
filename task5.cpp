@@ -1,42 +1,41 @@
 #include<iostream>
 #include<windows.h>
 using namespace std;
-void printmaze();
-void gotoxy(int,int);
-main()
-{ 
-    int x,y;
-    x=3;
-    y=3;
-    printmaze();
-    gotoxy(x,y);
-    cout<<"P";
 
+int calculateTime(int hours, int minutes);
+ 
+main(){
+
+  int hours , minutes;
+
+  cout<< "Enter Hours: ";
+  cin>>hours;
+
+  cout<< "Enter Minutes : ";
+  cin>>minutes;
+ 
+  int time = calculateTime(hours , minutes);
+
+  cout<<time;
+  
 }
-void printmaze()
-{
-cout<<"###################################################################################"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"#                                                                                 #"<<endl;
-cout<<"###################################################################################"<<endl;
+
+int calculateTime(int hours, int minutes){
+
+    
+   minutes = minutes + 15;
+
+  if(minutes > 59){
+
+     hours= hours + 1;
+     minutes = minutes - 60;
 }
-void gotoxy(int x, int y)
-{
-COORD coordinates;
-coordinates.X = x;
-coordinates.Y = y;
-SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),coordinates);
+
+  if(hours > 23){
+
+       hours = hours-24;
 }
+
+   cout << "The time after 15 minutes will be " << hours << ":" << minutes << endl;
+   return 0;
+} 

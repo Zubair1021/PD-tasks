@@ -1,17 +1,28 @@
 #include<iostream>
-#include<windows.h>
-#include<c.math>
+
 using namespace std;
-main()
-{
-system("cls");
-int num1;
-int num2; 
-int power;
-cout<<"Enter first number:  ";
-cin>>num1;
-cout<<"Enter second number:  ";
-cin>>num2;
-power =pow(num1,num2);
-cout<<"power is "<<power<<endl;  
+
+int multiplyby5 (int number);
+
+main(){
+
+  int number;
+  int result;
+  cout<<"Enter Number: ";
+  cin>>number;
+
+ result = multiplyby5(number);
+
+  cout<<"RESULT: "<<result;
+
 }
+
+
+int multiplyby5 (int number)
+{  
+
+  int no = number * 5;
+
+  return no;
+
+} 

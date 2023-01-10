@@ -1,35 +1,42 @@
 #include<iostream>
+#include<cmath>
+
 using namespace std;
-float pyramidvolume(float,float,float,string);
-main()
-{
-float length,width,height,volume;
-string outputunit;
-cout<<"Enter the length: ";
-cin>>length;
-cout<<"Enter the width: ";
-cin>>width;
-cout<<"Enter the height: ";
-cin>>height;
-cout<<"Enter unit :";
-cin>>outputunit;
-volume=pyramidvolume(length,width,height,outputunit);
-cout<<"volume is: "<<volume<<" cubic"<<outputunit;
+
+bool symmetery(int number);
+
+main(){
+
+  int number;
+
+  cout<<"Enter Number: ";
+  cin>>number;
+
+  cout<<symmetery(number);
+
+
 }
-float pyramidvolume(float length,float width,float height,string outputunit)
-{
-    float volume;
-    if(outputunit=="centimeter")
-    {
-         volume = ((length*width*height)/3)*1000000;  
-    }
-     if(outputunit=="kilometer")
-    {
-         volume = ((length*width*height)/3)/1000000000;  
-    }
-     if(outputunit=="millimeter")
-    {
-         volume = ((length*width*height)/3)*1000000000;  
-    }
- return volume;
-}
+
+bool symmetery(int number){
+
+   int rem1 = number % 10;
+   int quotient1 = number / 10;
+
+   int rem2 = quotient1 % 10;
+   int quotient2 = quotient1 / 10;
+
+   int rem3 = quotient2 % 10;
+  
+  if(rem1==rem3){
+          
+          return true;     
+
+   }
+   if(rem1!=rem3){
+          
+          return false;     
+
+   }     
+
+   return 0;
+} 

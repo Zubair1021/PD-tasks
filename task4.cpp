@@ -1,46 +1,51 @@
 #include<iostream>
+
 using namespace std;
-float finalprice(float,string);
-main()
-{
-float vehicalprice;
-string vehicalcode;
-float totalprice;
-cout<<"Enter the price of vehical: ";
-cin>>vehicalprice;
-cout<<"Enter the code of vehical: ";
-cin>>vehicalcode;
-totalprice=finalprice(vehicalprice,vehicalcode);
-cout<<"The final price of the vehival is "<<totalprice;
+
+int checkNumber(int number);
+
+main(){
+
+   int number;
+   
+   cout<<"Enter Number: ";
+   cin>>number;
+  
+   int number2 =checkNumber(number); 
+
+   cout<<number2;
+
+
 }
-float finalprice(float vehicalprice,string vehicalcode)
-{
-    float totalprice;
-    float taxamount;
-if(vehicalcode=="m")
-{
-    taxamount= (vehicalprice*6)/100;
-    totalprice= taxamount +vehicalprice;
-}
-if(vehicalcode=="e")
-{
-   taxamount= (vehicalprice*8)/100;
-    totalprice= taxamount +vehicalprice;
-}
-if(vehicalcode=="s")
-{
-    taxamount= (vehicalprice*10)/100;
-    totalprice= taxamount +vehicalprice;
-}
-if(vehicalcode=="v")
-{
-     taxamount= (vehicalprice*12)/100;
-    totalprice= taxamount +vehicalprice;
-}
-if(vehicalcode=="t")
-{
-    taxamount =(vehicalprice*15)/100;
-    totalprice= taxamount +vehicalprice;
-}
-return totalprice;
+
+int checkNumber(int number){
+
+
+   int rem1 = number % 10;
+   int quot1 = number / 10;
+
+   int rem2 = quot1 % 10;
+   int quot2 = quot1 / 10;
+
+   int rem3 = quot2 % 10;
+   int quot3 = quot2 / 10;
+
+   int rem4 = quot3 % 10;
+   int quot4 = quot3 / 10;
+
+   int rem5 = quot4 % 10;
+
+   int sum = rem1 + rem2 + rem3 + rem4 + rem5;
+
+   if(sum % 2 == 0 ){
+
+   cout<<"Number Is Evenish";
+  }
+
+   if(sum % 2 != 0 ){
+
+   cout<<"Number Is Oddish";
+  }
+ 
+     return 0;
 }
