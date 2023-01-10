@@ -1,38 +1,18 @@
 #include<iostream>
-
 using namespace std;
+main()
+{
+int num1;
+int num2;
+int sum;
+cout<<"Enter First number: ";
+cin>>num1;
+cout<<"Enter second number: ";
+cin>>num2;
+sum=num1+num2;
+cout<<"Sum of two number: "<<sum;
 
 
-string checkCase(char alphabet);
 
-main(){
-
-  char alphabet;
-  
-  cout<<"Enter An Alphabet: ";
-  cin>>alphabet;
-
-  checkCase(alphabet);
-
-  cout<<"The Alphabet You Entered Is In "<<checkCase(alphabet);
-
-}
-
-
-string checkCase(char alphabet){
-  if(alphabet >= 'a' ){
-
-    return "lowercase";
-
-}
-
-  else if(alphabet >= 'A' ){
-
-    return "uppercase";
-
-}
-
- 
-return "not an alphabet";
 
 }

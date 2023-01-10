@@ -1,42 +1,17 @@
 #include<iostream>
-#include<cmath>
-
 using namespace std;
-
-bool symmetery(int number);
-
-main(){
-
-  int number;
-
-  cout<<"Enter Number: ";
-  cin>>number;
-
-  cout<<symmetery(number);
-
-
+main()
+{
+float initialVelocity;
+float finalVelocity;
+float time;
+float accerlation;
+cout<<"Enter Accerlation: ";
+cin>>accerlation;
+cout<<"Enter initial velocity: ";
+cin>>initialVelocity;
+cout<<"Enter Time: ";
+cin>>time;
+finalVelocity=(accerlation*time)+initialVelocity;
+cout<<"Final Velocity:"<<finalVelocity;
 }
-
-bool symmetery(int number){
-
-   int rem1 = number % 10;
-   int quotient1 = number / 10;
-
-   int rem2 = quotient1 % 10;
-   int quotient2 = quotient1 / 10;
-
-   int rem3 = quotient2 % 10;
-  
-  if(rem1==rem3){
-          
-          return true;     
-
-   }
-   if(rem1!=rem3){
-          
-          return false;     
-
-   }     
-
-   return 0;
-} 
